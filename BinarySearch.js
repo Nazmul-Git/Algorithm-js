@@ -21,5 +21,5 @@ const binarySearch=(arr, key)=>{
     }
 };
 const arr= [2,3,4,6,9,12,16,20,25,30,40,80,81,99,100]
-const search= binarySearch(arr, 16);
+const search= binarySearch(arr, 100);
 console.log(search);
