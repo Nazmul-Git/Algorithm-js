@@ -32,6 +32,7 @@
 /////////////////////// ORDER AGNOSTIC BINARY SEARCH //////////////////////////////////
 
 const binarySearch=(arr, key)=>{
+    // console.log(arr);
     let left=0;
     let right= arr.length-1;
     let mid;
@@ -45,9 +46,7 @@ const binarySearch=(arr, key)=>{
     }
 
     while(right >= left){
-
         mid= left + Math.floor((right-left)/2);
-
         if(arr[mid] === key){
             return 'data found at index = '+ mid;
         }
@@ -63,21 +62,25 @@ const binarySearch=(arr, key)=>{
         }
         else{
             if(arr[mid] < key){
-                left= mid-1;
+                right= mid-1;
             }
     
             else{
-                right= mid+1;
+                left= mid+1;
             }
-        }
-
-        
+        }        
     }
 };
-const arrAscending= [2,3,4,6,9,12,16,20,25,30,40,80,81,99,100]
-const search= binarySearch(arrAscending, 100);
-console.log(search);
+const arrAscending= [2,3,4,6,9,12,16,20,25,30,40,80,80,81,99,100]
+// const search= binarySearch(arrAscending, 80);
+// console.log(search);
 
-const arrDescending=[55,48,47,33,25,25,17,12,9,8,5,1];
-const search2= binarySearch(arrDescending, 25);
+//           - no need -
+// const arrDescending=[55,48,47,33,25,25,17,12,9,8,5,1];
+// const search2= binarySearch(arrDescending, 25);
+// console.log(search2);
+
+const arrDescending= arrAscending.reverse();
+console.log(arrDescending);//[100, 99, 81, 80, 80, 40, 30, 25, 20, 16, 12,  9, 6,  4,  3,  2 ]
+const search2= binarySearch(arrDescending, 80);
 console.log(search2);
