@@ -11,4 +11,5 @@ var targetIndices = function(nums, target) {
 };
 const output=targetIndices([1,2,5,2,3], 2);
 console.log(output);
-// console.log(Math.floor(5.5))
+
+
