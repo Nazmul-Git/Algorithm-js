@@ -78,31 +78,80 @@ const search2 = binarySearch(arrDescending, 80);
 
 //////////////////////////////////////////////////////////////
 
-// Flooring/ Ceiling number in array
+//1. Flooring/ Ceiling number in array
+
 // let arr2 = [5, 7, 10, 13, 17, 22, 25, 30, 31, 39];
 // const key= 28;
 // ceiling = 30
 // floor = 25
 const findCeiling = (arr2, key) => {
-    let l=0;
-    let r= arr2.length-1;
-    let m;
+  let l = 0;
+  let r = arr2.length - 1;
+  let m;
 
-    while(r>=l){
-        m= l + Math.floor((r-l)/2);
-        if(arr2[m] === key){
-            return arr[m];
-        }
-        if(arr2[m] > key){
-            r= m-1;
-        }
-        else{
-            l= m+1;
-        }
+  while (r >= l) {
+    m = l + Math.floor((r - l) / 2);
+    if (arr2[m] === key) {
+      return arr2[m];
     }
-    return arr2[m+1];
+    if (arr2[m] > key) {
+      r = m - 1;
+    } else {
+      l = m + 1;
+    }
+  }
+  return `Here ${key}'s Ceiling = ${arr2[m + 1]} & Floor = ${arr2[m - 1]}`;
 };
 const arr2 = [5, 7, 10, 13, 17, 22, 25, 30, 31, 39];
 
-const ceil= findCeiling(arr2, 28);
+const ceil = findCeiling(arr2, 28);
 console.log(ceil);
+
+
+
+
+// 2. Make 1 sorted array from 2 other stored array, then search data
+
+const countDuplicateNumber = (arr1, arr2, key) => {
+  const makeOne = arr1.concat(arr2);
+  const sorted = makeOne.sort((a, b) => a - b);
+
+  let l = 0;
+  let r = sorted.length - 1;
+  let m;
+  let count = 0;
+
+  while (r >= l) {
+    m = l + Math.floor((r - l) / 2);
+    if (sorted[m] === key) {
+      count++;
+      // Move left to find more occurrences
+      let leftPointer = m - 1;
+      while (leftPointer >= 0 && sorted[leftPointer] === key) {
+        count++;
+        leftPointer--;
+      }
+
+      // Move right to find more occurrences
+      let rightPointer = m + 1;
+      while (rightPointer < sorted.length && sorted[rightPointer] === key) {
+        count++;
+        rightPointer++;
+      }
+
+      return count;
+    } else if (sorted[m] > key) {
+      r = m - 1;
+    } else {
+      l = m + 1;
+    }
+  }
+
+  return count;
+};
+
+const array1 = [5, 2, 9, 1, 7, 15, 20, 11, 10, 19, 25, 33];
+const array2 = [45, 50, 30, 33, 27, 44, 31, 33, 50, 33];
+
+const result = countDuplicateNumber(array1, array2, 33);
+console.log(result);
