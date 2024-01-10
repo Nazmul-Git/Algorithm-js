@@ -18,18 +18,20 @@ Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
  */
-const twoSum=(nums,target)=>{
-    let l=0, r=nums.length-1;
-    while(l<=r){
-        let sum=nums[l]+nums[r]
-        if(sum===target) return [l,r]
+var twoSum = function(nums, target) {
+    const numsWithIndex = nums.map((value, index) => ({ value, index }));
+    numsWithIndex.sort((a, b) => a.value - b.value);
+    // console.log(numsWithIndex)
+    let l=0, r=numsWithIndex.length-1;
+    while(l<r){
+        let sum=numsWithIndex[l].value +numsWithIndex[r].value
+        if(sum===target) return [numsWithIndex[l].index, numsWithIndex[r].index]
         else if(sum<target) l++
         else r--
     }
-    return -1
-    
-}
-let arr=[3,2,4].sort((a,b)=>a-b);
+    return []
+};
+let arr=[3,2,4];
 const result=twoSum(arr, 6)
 console.log(result);
 
