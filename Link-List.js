@@ -21,22 +21,29 @@
 
 ////////////////////////////////////////////
 
+class Node {
+    constructor(value){
+        this.value=value;
+        this.next=null
+    }
+}
 
 class LinkList {
     head;
     tail;
     length;
     constructor(value){
-        let node={
-            value:value,
-            next:null
-        }
+        // let node={
+        //     value:value,
+        //     next:null
+        // }
+        let node=new Node(value,null)
         this.head=node;
         this.tail=node;
         this.length=1;
         // console.log('This : ',this);
     }
-    append(value){
+    append(value){ 
         let node={
             value:value, 
             next:null
@@ -45,6 +52,14 @@ class LinkList {
         this.tail=node;
         this.length++;
     }
+
+    print(){
+        let data=this.head;
+        while(data.next != null){
+            console.log(data.value);
+            data=data.next;
+        }
+    }
 }
 
 let list=new LinkList(100);
@@ -52,4 +67,4 @@ list.append(200);
 list.append(300);
 list.append(400);
 list.append(500);
-console.log(list);
+list.print();
