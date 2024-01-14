@@ -19,8 +19,7 @@
 
 
 
-////////////////////////////////////////////
-
+////////////////////////////////////////////////////////////////
 class Node {
     constructor(value,next=null){
         this.value=value;
@@ -28,6 +27,7 @@ class Node {
     }
 }
 
+// link-list
 class LinkList {
     head;
     tail;
@@ -35,6 +35,7 @@ class LinkList {
     constructor(value){
 
         let node=new Node(value)
+        // Set 2 pointer head & tail and length
         this.head=node;
         this.tail=node;
         this.length=1;
@@ -54,19 +55,22 @@ class LinkList {
     #getPrevious(index){
         index--;
         let data=this.head;
-        console.log(data)
+        // console.log(data)
         while(index){
             data=data.next;
             index--;
         }
-        console.log(data);
+        return data;
     }
     insertAtPosition(value, index){
         if(index===0) this.prepend(value);
         else if(index===this.length) this.append(value);
         else{
             // run loop & find previous idx
-            this.#getPrevious(index);
+            let previousNode=this.#getPrevious(index);
+            console.log(previousNode)
+            let newNode=new Node(value, previousNode.next);
+            previousNode.next=newNode;
         }
     }
     print(){
@@ -87,5 +91,5 @@ list.append(500);
 list.append(600);
 list.prepend(10);
 list.append(700)
-list.insertAtPosition(550,2)
+list.insertAtPosition(550,6)
 list.print();
