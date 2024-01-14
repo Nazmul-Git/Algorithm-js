@@ -51,6 +51,24 @@ class LinkList {
         this.head=node;
     }
 
+    #getPrevious(index){
+        index--;
+        let data=this.head;
+        console.log(data)
+        while(index){
+            data=data.next;
+            index--;
+        }
+        console.log(data);
+    }
+    insertAtPosition(value, index){
+        if(index===0) this.prepend(value);
+        else if(index===this.length) this.append(value);
+        else{
+            // run loop & find previous idx
+            this.#getPrevious(index);
+        }
+    }
     print(){
         let data=this.head;
         // console.log(data);
@@ -69,4 +87,5 @@ list.append(500);
 list.append(600);
 list.prepend(10);
 list.append(700)
+list.insertAtPosition(550,2)
 list.print();
