@@ -17,6 +17,12 @@
 // }
 
 ////////////////////////////////////////////////////////////////
+// WE CAN KEEP A VALUE INTO A VARIABLE = NULL
+// const check=(x=null)=>{
+//   console.log('x is = ',x);
+// }
+// check(20)
+
 class Node {
   constructor(value, next = null) {
     this.value = value;
@@ -54,8 +60,10 @@ class LinkList {
     // console.log(data)
     while (index) {
       data = data.next;
+      // console.log(data.next);
       index--;
     }
+    // console.log(data);
     return data;
   }
   insertAtPosition(value, index) {
@@ -64,8 +72,11 @@ class LinkList {
     else {
       // run loop & find previous idx
       let previousNode = this.#getPrevious(index);
-    //   console.log(previousNode);
+      // console.log(previousNode.next);
+
+      //newNode-(new j NODE ta create korbo) er 'next' value null set na kore previousNode er, 'next' er address k set kore newNode create korlam.
       let newNode = new Node(value, previousNode.next);
+      // now previousNode er 'next' a newNode k set kore dilam.
       previousNode.next = newNode;
     }
   }
@@ -89,7 +100,10 @@ list.append(600);
 list.prepend(10);
 list.append(700);
 list.insertAtPosition(550, 6);
+list.prepend(1000);
 list.print();
+
+
 
 
 /**-->  print all data
