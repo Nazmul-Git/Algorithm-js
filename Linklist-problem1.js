@@ -31,6 +31,10 @@ class LinkList{
             this.append(arr[i]);
         }
     }
+    prepend(value){
+        let node=new Node(value, this.head);
+        this.head=node;
+    }
     print(){
         let data=this.head;
         console.log(data);
@@ -44,4 +48,5 @@ class LinkList{
 let nodeList=new LinkList(10);
 nodeList.append(20);
 nodeList.appendMultiple([30,40,50]);
+nodeList.prepend(1)
 nodeList.print()
