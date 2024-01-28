@@ -27,7 +27,7 @@ class LinkList {
     // console.log(node);
   }
   appendMultiple(arr) {
-    for (let i = 1; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       this.append(arr[i]);
     }
   }
@@ -63,6 +63,10 @@ class LinkList {
     }
     return data;
   }
+  updateAtAnyPosition(value,index){
+    let currNode=this.#getCurrentIndex(index);
+    currNode.value=value;
+  }
   deleteAtPosition(index) {
     let previousNode=this.#getPreviousIndex(index);
     previousNode.next=previousNode.next.next;
@@ -83,4 +87,5 @@ nodeList.appendMultiple([30, 40, 50]);
 nodeList.prepend(1);
 nodeList.insertAtPosition(45, 4);
 nodeList.deleteAtPosition(4)
+nodeList.updateAtAnyPosition(0,0);
 nodeList.print();
