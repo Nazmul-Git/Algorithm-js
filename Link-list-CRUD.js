@@ -20,6 +20,11 @@ class LinkList {
         this.tail.next=node;
         this.tail=node;
     }
+    appendMultiple(arr){
+        for(let i=0; i<arr.length; i++){
+            this.append(arr[i]);
+        }
+    }
     prepend(value){
         let node= new Node(value, this.head);
         this.head=node;
@@ -86,4 +91,5 @@ nodeList.deleteAtPosition(2);
 nodeList.updateValue(1500,2);
 nodeList.updateValue(1000,1);
 nodeList.updateValue(500,0);
+nodeList.appendMultiple([2000,2500,3000])
 nodeList.print()
