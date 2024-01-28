@@ -42,6 +42,11 @@ class LinkList {
             previousNode.next=newNode;
         }
     }
+    deleteAtPosition(index){
+        let previousNode=this.#getPreviousNode(index);
+        previousNode.next=previousNode.next.next;
+
+    }
     print(){
         let data = this.head;
         while(data){
@@ -57,4 +62,5 @@ let nodeList=new LinkList(10);
 nodeList.append(20);
 nodeList.prepend(5);
 nodeList.insertAtAnyPosition(15,2)
+nodeList.deleteAtPosition(2);
 nodeList.print()
