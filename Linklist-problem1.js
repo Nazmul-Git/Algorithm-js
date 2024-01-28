@@ -35,18 +35,19 @@ class LinkList{
         let node=new Node(value, this.head);
         this.head=node;
     }
-    #getPreviousIndex(index){ //5
-        index--; //4
+    #getPreviousIndex(index){ //4
+        index--; //3
         let data=this.head; //head node
-        while(index){  //4->3->2->1
+        while(index){  //3->2->1
             data=data.next;  // head node  = node er next 
-            index--; //3
+            index--; //2->1
         }
         return data;
     }
     insertAtPosition(value, index){
-        let node=new Node(value);
-        let previousIndex=this.#getPreviousIndex(index);
+        let previousNode=this.#getPreviousIndex(index);
+        let node= new Node(value,previousNode.next);
+        previousNode.next=node;
     }
     print(){
         let data=this.head;
@@ -62,5 +63,5 @@ let nodeList=new LinkList(10);
 nodeList.append(20);
 nodeList.appendMultiple([30,40,50]);
 nodeList.prepend(1)
-nodeList.insertAtPosition(45,5);
+nodeList.insertAtPosition(45,4);
 nodeList.print()
