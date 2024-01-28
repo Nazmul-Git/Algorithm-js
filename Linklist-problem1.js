@@ -26,6 +26,11 @@ class LinkList{
         this.tail=node;
         // console.log(node);
     }
+    appendMultiple(arr){
+        for(let i=1; i<arr.length; i++){
+            this.append(arr[i]);
+        }
+    }
     print(){
         let data=this.head;
         console.log(data);
@@ -38,4 +43,5 @@ class LinkList{
 }
 let nodeList=new LinkList(10);
 nodeList.append(20);
+nodeList.appendMultiple([30,40,50]);
 nodeList.print()
