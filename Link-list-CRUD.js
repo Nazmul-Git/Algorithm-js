@@ -46,7 +46,7 @@ class LinkList {
          data=data.next;
          index--;
         }
-        return data
+        return data;
         
     }
 
