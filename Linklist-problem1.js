@@ -53,6 +53,7 @@ class LinkList {
       let previousNode = this.#getPreviousIndex(index);
       let node = new Node(value, previousNode.next);
       previousNode.next = node;
+      this.length++;
     }
   }
   #getCurrentIndex(index){
@@ -78,7 +79,7 @@ class LinkList {
   }
   print() {
     let data = this.head;
-    console.log(data);
+    // console.log(data);
     while (data) {
       console.log(data.value);
       data = data.next;
@@ -86,10 +87,14 @@ class LinkList {
   }
 }
 let nodeList = new LinkList(10);
-nodeList.append(20);
-nodeList.appendMultiple([30, 40, 50]);
+nodeList.append(15);
+nodeList.appendMultiple([20, 30, 400]);
 nodeList.prepend(1);
-nodeList.insertAtPosition(45, 4);
-nodeList.deleteAtPosition(4)
-nodeList.updateAtAnyPosition(-10,0);
+nodeList.insertAtPosition(25, 4);
+nodeList.insertAtPosition(35, 6);
+nodeList.insertAtPosition(40, 7);
+nodeList.deleteAtPosition(8);
+nodeList.updateAtAnyPosition(5,0);
+nodeList.updateAtAnyPosition(400,7);
+nodeList.updateAtAnyPosition(200,3);
 nodeList.print();
