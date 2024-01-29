@@ -64,8 +64,12 @@ class LinkList {
     return data;
   }
   updateAtAnyPosition(value,index){
-    let currNode=this.#getCurrentIndex(index);
-    currNode.value=value;
+    if(index===0) this.head.value=value;
+    else if(index===this.length) this.tail.value=value;
+    else{
+      let currNode=this.#getCurrentIndex(index);
+      currNode.value=value;
+    }
   }
   deleteAtPosition(index) {
     let previousNode=this.#getPreviousIndex(index);
@@ -87,5 +91,5 @@ nodeList.appendMultiple([30, 40, 50]);
 nodeList.prepend(1);
 nodeList.insertAtPosition(45, 4);
 nodeList.deleteAtPosition(4)
-nodeList.updateAtAnyPosition(0,0);
+nodeList.updateAtAnyPosition(-10,0);
 nodeList.print();
