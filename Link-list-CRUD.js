@@ -61,8 +61,18 @@ class LinkList {
     }
 
     deleteAtPosition(index){
-        let previousNode=this.#getPreviousNode(index);
-        previousNode.next=previousNode.next.next;
+        if(index===0){
+            this.head=this.head.next;
+            this.length--;
+        }else if(index===this.length-1){
+            let previousNode=this.#getPreviousNode(index);
+            previousNode.next=null;
+            this.tail=previousNode;
+        }else{
+            let previousNode=this.#getPreviousNode(index);
+            previousNode.next=previousNode.next.next;
+        }
+            
     }
 
     updateValue(val,idx){
@@ -87,9 +97,9 @@ let nodeList=new LinkList(10);
 nodeList.append(20);
 nodeList.prepend(5);
 nodeList.insertAtAnyPosition(15,2)
-nodeList.deleteAtPosition(2);
 nodeList.updateValue(1500,2);
 nodeList.updateValue(1000,1);
 nodeList.updateValue(500,0);
 nodeList.appendMultiple([2000,2500,3000])
+// nodeList.deleteAtPosition(0);
 nodeList.print()
