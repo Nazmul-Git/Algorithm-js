@@ -9,7 +9,7 @@ class Node {
     this.next = next;
   }
 }
-
+ 
 class LinkList {
   head;
   tail;
@@ -73,8 +73,23 @@ class LinkList {
     }
   }
   deleteAtPosition(index) {
-    let previousNode=this.#getPreviousIndex(index);
-    previousNode.next=previousNode.next.next;
+    if(index===0){
+      this.head=this.head.next;
+      this.length--;
+    }
+    else if(index===this.length-1){
+      let previousNode=this.#getPreviousIndex(index);
+      previousNode.next=null;
+      this.tail=previousNode;
+      this.length--;
+
+    }
+    else{
+      let previousNode=this.#getPreviousIndex(index);
+      let currNode=this.#getCurrentIndex(index);
+      previousNode.next=currNode.next;
+      this.length--;
+    }
 
   }
   print() {
@@ -97,4 +112,7 @@ nodeList.deleteAtPosition(8);
 nodeList.updateAtAnyPosition(5,0);
 nodeList.updateAtAnyPosition(400,7);
 nodeList.updateAtAnyPosition(200,3);
+// nodeList.deleteAtPosition(0);
+// nodeList.deleteAtPosition(7);
+// nodeList.deleteAtPosition(3);
 nodeList.print();
