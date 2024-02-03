@@ -99,7 +99,8 @@ nodeList.prepend(5);
 nodeList.insertAtAnyPosition(15,2)
 nodeList.updateValue(1500,2);
 nodeList.updateValue(1000,1);
-nodeList.updateValue(500,0);
 nodeList.appendMultiple([2000,2500,3000])
 // nodeList.deleteAtPosition(0);
+// nodeList.updateValue(500,0);
+// nodeList.updateValue(30000,6);
 nodeList.print()

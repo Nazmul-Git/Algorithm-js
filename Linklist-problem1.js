@@ -75,21 +75,18 @@ class LinkList {
   deleteAtPosition(index) {
     if(index===0){
       this.head=this.head.next;
-      this.length--;
     }
     else if(index===this.length-1){
       let previousNode=this.#getPreviousIndex(index);
       previousNode.next=null;
       this.tail=previousNode;
-      this.length--;
-
     }
     else{
       let previousNode=this.#getPreviousIndex(index);
       let currNode=this.#getCurrentIndex(index);
       previousNode.next=currNode.next;
-      this.length--;
     }
+    this.length--;
 
   }
   print() {
