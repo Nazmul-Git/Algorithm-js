@@ -25,7 +25,15 @@ class Doubly_Linklist{
         this.length++;
          
     }
+    prepend(value){
+        let node= new Node(value);
+        node.next=this.head;
+        this.head.previous=node;
+        this.head=node;
+        this.length++;
+    }
 }
 let nodeList=new Doubly_Linklist(10);
 nodeList.append(20);
+nodeList.prepend(5);
 console.log(nodeList);
