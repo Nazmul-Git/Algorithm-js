@@ -70,6 +70,10 @@ class Doubly_Linklist{
         }
         this.length--;
     }
+    updateValue(value,index){
+        let previousNode=this.#getPreviousNode(index);
+        previousNode.next.value=value;
+    }
     print(){
         let data=this.head;
         while(data){
@@ -87,5 +91,6 @@ nodeList.insertAtPosition(15,2);
 nodeList.insertAtPosition(25,3);
 nodeList.insertAtPosition(-100,0);
 nodeList.deleteAtPosition(2);
+nodeList.updateValue(200,3);
 // console.log(nodeList);
 nodeList.print();
