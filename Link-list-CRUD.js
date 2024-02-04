@@ -63,7 +63,6 @@ class LinkList {
     deleteAtPosition(index){
         if(index===0){
             this.head=this.head.next;
-            this.length--;
         }else if(index===this.length-1){
             let previousNode=this.#getPreviousNode(index);
             previousNode.next=null;
@@ -72,7 +71,7 @@ class LinkList {
             let previousNode=this.#getPreviousNode(index);
             previousNode.next=previousNode.next.next;
         }
-            
+        this.length--;
     }
 
     updateValue(val,idx){
