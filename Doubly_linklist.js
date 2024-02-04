@@ -32,8 +32,42 @@ class Doubly_Linklist{
         this.head=node;
         this.length++;
     }
+    #getPreviousNode(index){
+        index--;
+        let data=this.head;
+        while(index){
+            // console.log(data.value);
+            data=data.next;
+            index--;
+        }
+        return data;
+    }
+    insertAtPosition(value, index){
+        let node= new Node(value);
+        if(index===0) this.prepend(value);
+        else if(index=== this.length) this.append(value);
+        else{
+            let preNode=this.#getPreviousNode(index);
+            node.next=preNode.next;
+            preNode.next.previous=node;
+            preNode.next=node;
+            node.previous=preNode;
+        }
+    }
+    print(){
+        let data=this.head;
+        while(data){
+            console.log(`<-------${this.length}-------->`)
+            console.log(data.value);
+            data=data.next;
+        }
+        return data;
+    }
 }
 let nodeList=new Doubly_Linklist(10);
 nodeList.append(20);
 nodeList.prepend(5);
-console.log(nodeList);
+nodeList.insertAtPosition(15,2);
+nodeList.insertAtPosition(25,3);
+// console.log(nodeList);
+nodeList.print();
