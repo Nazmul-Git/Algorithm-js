@@ -57,7 +57,7 @@ class Doubly_Linklist{
     print(){
         let data=this.head;
         while(data){
-            console.log(`<-------${this.length}-------->`)
+            console.log(`<-----Length is--${this.length}-------->`)
             console.log(data.value);
             data=data.next;
         }
@@ -69,5 +69,6 @@ nodeList.append(20);
 nodeList.prepend(5);
 nodeList.insertAtPosition(15,2);
 nodeList.insertAtPosition(25,3);
+nodeList.insertAtPosition(-100,0);
 // console.log(nodeList);
 nodeList.print();
