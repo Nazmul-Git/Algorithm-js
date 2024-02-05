@@ -15,10 +15,19 @@ class LinkList {
         this.tail=node;
         this.length=1;
     }
+    print(){
+        let data = this.head;
+        // console.log(data)
+        while(data){
+            console.log(data.value);
+            data=data.next;
+        }
+    }
     append(value){
         let node = new Node(value);
         this.tail.next=node;
         this.tail=node;
+        this.length++;
     }
     appendMultiple(arr){
         for(let i=0; i<arr.length; i++){
@@ -28,6 +37,7 @@ class LinkList {
     prepend(value){
         let node= new Node(value, this.head);
         this.head=node;
+        this.length++;
     }
 
     #getPreviousNode(index){
@@ -57,6 +67,7 @@ class LinkList {
             let previousNode=this.#getPreviousNode(index);
             let newNode=new Node(value,previousNode.next);
             previousNode.next=newNode;
+            this.length++;
         }
     }
 
@@ -76,30 +87,38 @@ class LinkList {
 
     updateValue(val,idx){
         let currNode=this.#getCurrentNode(idx);
-        console.log(currNode);
+        // console.log(currNode);
         currNode.value=val;
     }
 
-    print(){
-        let data = this.head;
-        console.log(data)
-        while(data){
-            console.log(data.value);
-            data=data.next;
+    linkListReverse(){
+        console.log('length is = ',this.length)
+        if(this.length===1) return;
+        else if(this.length===2){}
+        else{
+            let previousNode=this.head;
+            let currentNode=this.head.next;
+            while(currentNode){
+                let nextNode=currentNode.next;
+                currentNode.next=previousNode;
+                previousNode=currentNode;
+                currentNode=nextNode;
+            }
+            this.head.next=null;
+            this.head=previousNode;
         }
-    }
-
-    
+    }   
 }
 
 let nodeList=new LinkList(10);
 nodeList.append(20);
-nodeList.prepend(5);
+nodeList.prepend(-10);
 nodeList.insertAtAnyPosition(15,2)
-nodeList.updateValue(1500,2);
-nodeList.updateValue(1000,1);
-nodeList.appendMultiple([2000,2500,3000])
+nodeList.updateValue(150,2);
+nodeList.updateValue(100,1);
+nodeList.appendMultiple([200,250,300])
 // nodeList.deleteAtPosition(0);
 // nodeList.updateValue(500,0);
 // nodeList.updateValue(30000,6);
+nodeList.linkListReverse();
 nodeList.print()
