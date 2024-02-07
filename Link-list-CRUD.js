@@ -94,7 +94,12 @@ class LinkList {
     linkListReverse(){
         console.log('length is = ',this.length)
         if(this.length===1) return;
-        else if(this.length===2){}
+        else if(this.length===2){
+            let temp=this.head.next;
+            this.head.next=null;
+            temp.next=this.head;
+            this.head=temp;
+        }
         else{
             let previousNode=this.head;
             let currentNode=this.head.next;
@@ -112,11 +117,11 @@ class LinkList {
 
 let nodeList=new LinkList(10);
 nodeList.append(20);
-nodeList.prepend(-10);
-nodeList.insertAtAnyPosition(15,2)
-nodeList.updateValue(150,2);
-nodeList.updateValue(100,1);
-nodeList.appendMultiple([200,250,300])
+// nodeList.prepend(-10);
+// nodeList.insertAtAnyPosition(15,2)
+// nodeList.updateValue(150,2);
+// nodeList.updateValue(100,1);
+// nodeList.appendMultiple([200,250,300])
 // nodeList.deleteAtPosition(0);
 // nodeList.updateValue(500,0);
 // nodeList.updateValue(30000,6);
