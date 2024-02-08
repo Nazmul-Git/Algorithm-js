@@ -21,6 +21,13 @@ class Queue{
         this.tail=node;
         this.length++;
     }
+    dequeue(){
+        this.head=this.head.next;
+        this.length--;
+    }
+    isEmpty(){
+        return this.length? false : true;
+    }
     print(){
         let data= this.head;
         while(data){
@@ -33,4 +40,11 @@ class Queue{
 let list= new Queue(10);
 list.enqueue(20);
 list.enqueue(30);
+list.dequeue();
+list.dequeue();
+console.log(list.isEmpty());
+list.enqueue(40);
+list.dequeue();
+list.dequeue();
+console.log(list.isEmpty());
 list.print();
