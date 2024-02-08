@@ -28,6 +28,9 @@ class Queue{
     isEmpty(){
         return this.length? false : true;
     }
+    peek(){
+        return this.head.value;
+    }
     print(){
         let data= this.head;
         while(data){
@@ -43,6 +46,7 @@ list.enqueue(30);
 list.dequeue();
 list.dequeue();
 console.log(list.isEmpty());
+console.log(list.peek());
 list.enqueue(40);
 list.dequeue();
 list.dequeue();
