@@ -4,7 +4,7 @@ const counter=(val)=>{
         let str=i+'';
         const arr= str.split('');
         arr.forEach(v=>{
-            if(v==val){
+            if(v===val+''){
                 count++;
             }
         })

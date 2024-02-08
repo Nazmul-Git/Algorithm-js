@@ -25,12 +25,17 @@ class Stack{
     pop(){
         let data= this.head;
         let previous=null;
+        if(this.length===1){
+            this.head=null;
+            this.tail=null
+            this.length--;
+            return data.value;
+        }
         while(data.next){
             previous=data;
             data=data.next;
-            // if(data.next===null) break;
         }
-        console.log('Previous node value = ',previous.value);
+        // console.log('Previous node value = ',previous.value);
         previous.next=null;
         this.tail=previous;
         this.length--;
@@ -39,6 +44,9 @@ class Stack{
     }
     peek(){
         return this.tail.value;
+    }
+    isEmpty(){
+        return this.length ? false :true ;
     }
     print(){
         let data= this.head;
@@ -56,4 +64,9 @@ list.pop();
 list.push(300);
 list.push(400);
 list.pop();
+console.log(list.isEmpty());
+list.pop();
+list.pop();
+list.pop();
+console.log(list.isEmpty());
 list.print();
