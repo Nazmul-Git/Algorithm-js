@@ -25,21 +25,13 @@ class LinkList{
     #findMedian(){
          console.log(this.length)
          let mid=this.length/2;
-         if(this.length%2===0){
-            return mid-1;
-         }else{
-            return Math.floor(mid);
-         }
+         return Math.floor(mid);
+         
     }
     findMedianValue(){
         let mid=this.#findMedian();
         console.log(mid);
-        let data=this.head;
-        while(mid){
-            data=data.next; 
-            mid --;
-        }
-        console.log(data.value)
+        
     }
     // findMedianValue(){
     //     let slowPointer=this.head;
@@ -54,7 +46,7 @@ class LinkList{
     print(){
         let data= this.head;
         while(data){
-            // console.log(data.value);
+            console.log(data.value);
             data=data.next;
         }
     }
