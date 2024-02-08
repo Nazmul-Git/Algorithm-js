@@ -18,6 +18,13 @@ class Stack{
 
     push(value){
         let node= new Node(value);
+        if(this.length===0){
+            this.head=node;
+            this.tail=node;
+            this.length++;
+            return;
+        }
+
         this.tail.next=node;
         this.tail=node;
         this.length++;
@@ -46,7 +53,7 @@ class Stack{
         return this.tail.value;
     }
     isEmpty(){
-        return this.length ? false :true ;
+        return this.length ? false : true;
     }
     print(){
         let data= this.head;
@@ -64,9 +71,15 @@ list.pop();
 list.push(300);
 list.push(400);
 list.pop();
-console.log(list.isEmpty());
+console.log(list.isEmpty()); //false
 list.pop();
 list.pop();
 list.pop();
-console.log(list.isEmpty());
+console.log(list.isEmpty()); //true
+list.push(1000);
+list.push(2000);
+console.log(list.isEmpty()); //false
+list.pop();
+list.pop();
+console.log(list.isEmpty()); //true
 list.print();
