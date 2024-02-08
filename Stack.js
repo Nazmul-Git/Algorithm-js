@@ -24,7 +24,7 @@ class Stack{
     }
     pop(){
         let data= this.head;
-        let previous=this.head.value;
+        let previous=null;
         while(data.next){
             previous=data;
             data=data.next;
@@ -53,5 +53,7 @@ let list=new Stack(10);
 list.push(20);
 list.push(30);
 list.pop();
-// list.pop();
+list.push(300);
+list.push(400);
+list.pop();
 list.print();
