@@ -22,10 +22,28 @@ class Stack{
         this.tail=node;
         this.length++;
     }
+    pop(){
+        let data= this.head;
+        let previous=this.head.value;
+        while(data.next){
+            previous=data;
+            data=data.next;
+            // if(data.next===null) break;
+        }
+        console.log('Previous node value = ',previous.value);
+        previous.next=null;
+        this.tail=previous;
+        this.length--;
+
+        return data.value;
+    }
+    peek(){
+        return this.tail.value;
+    }
     print(){
         let data= this.head;
         while(data){
-            console.log(data);
+            console.log(data.value);
             data=data.next;
         }
         return data;
@@ -34,4 +52,6 @@ class Stack{
 let list=new Stack(10);
 list.push(20);
 list.push(30);
+list.pop();
+// list.pop();
 list.print();
