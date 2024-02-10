@@ -20,6 +20,14 @@ class HashFunction{
         this.arr[index]=innerArr;
         
     }
+    get(value){
+        let index=this.#hashFnc(value);
+        let innerArr=[...this.arr[index]];
+        for(let ch of innerArr){
+            if(ch===value) return true;
+        }
+        return false;
+    }
 
 }
 let hash= new HashFunction(10);
@@ -27,4 +35,6 @@ let hash= new HashFunction(10);
 hash.set('sunny');
 hash.set('dhaka');
 hash.set('bangladesh');
+console.log(hash.get('sunny')); //true
+console.log(hash.get('Canada')); //false
 console.log(hash);
