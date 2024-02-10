@@ -5,7 +5,7 @@ class HashFunction{
     }
     #hashFnc(value){
         let sum=0;
-        value=value+'';
+        // value=value+'';
         for(let i=0;i<value.length;i++){
             sum+=value.charCodeAt(i);
         }
@@ -15,7 +15,7 @@ class HashFunction{
         let index=this.#hashFnc(value);
         // console.log(index)
         let innerArr=[...this.arr[index]];
-        console.log(innerArr);
+        // console.log(innerArr);
         innerArr.push(value)
         this.arr[index]=innerArr;
         
