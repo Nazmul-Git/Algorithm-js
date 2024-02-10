@@ -18,6 +18,14 @@ class HashFunction{
         innerArr.push(value);
         this.array[index]=innerArr;
     }
+    get(value){
+        let index=this.#hashFnc(value);
+        let innerArr=[...this.array[index]];
+        for(let idx of innerArr){
+            if(idx===value) return true;
+        }
+        return false;
+    }
 }
 let hash=new HashFunction(5);
 // hash.set(10);
@@ -27,6 +35,7 @@ hash.set('TypeScript');
 hash.set('sun');
 hash.set('dhaka');
 hash.set('bangladesh');
+console.log(hash.get('su'))
 
 
 console.log(hash);
