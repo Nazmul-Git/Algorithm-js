@@ -13,7 +13,7 @@ class HashFunction{
     }
     set(value){
         let index=this.#hashFnc(value);
-        // console.log(index)
+        console.log(index)
         let innerArr=[...this.arr[index]];
         // console.log(innerArr);
         innerArr.push(value)
@@ -37,4 +37,5 @@ hash.set('dhaka');
 hash.set('bangladesh');
 console.log(hash.get('sunny')); //true
 console.log(hash.get('Canada')); //false
+hash.set(500);
 console.log(hash);

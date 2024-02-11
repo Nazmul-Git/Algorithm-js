@@ -34,8 +34,8 @@ hash.set('javaScript');
 hash.set('TypeScript');
 hash.set('sun');
 hash.set('dhaka');
-hash.set('bangladesh');
 console.log(hash.get('su'))
+hash.set(9999);
 
 
 console.log(hash);
