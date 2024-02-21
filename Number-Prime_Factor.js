@@ -1,6 +1,6 @@
 const isPrime=(num)=>{
-    let n=105;
-    let array= new Array(n).fill(true);
+    let limit=105;
+    let array= new Array(limit).fill(true);
 
     array[0]=array[1]=false;
     for(let i=2; i<=array.length; i++){
@@ -18,4 +18,4 @@ const isPrime=(num)=>{
     }
     
 }
-console.log(isPrime(9));
+console.log(isPrime(97));
