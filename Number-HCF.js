@@ -1,11 +1,11 @@
 const HCF=(a,b)=>{
-    let arr=[];
+    let result;
     let minNum= a>b ? b : a;
     for(let i=1; i<=minNum; i++){
         if(a%i===0 && b%i===0){
-            arr.push(i);
+            result=i;
         }
     }
-    return arr.pop();
+    return result;
 }
-console.log(HCF(4,6));
+console.log(HCF(50,20));
