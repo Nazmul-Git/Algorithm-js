@@ -8,4 +8,4 @@ const HCF=(a,b)=>{
     }
     return result;
 }
-console.log(HCF(50,20));
+console.log(HCF(3,7));
