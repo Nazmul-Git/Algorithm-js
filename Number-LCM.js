@@ -1,10 +1,9 @@
 const LCM = (a, b) => {
   let maxNum = a > b ? a : b;
-  while(1){
-    if(maxNum%a===0 && maxNum%b===0){
-        return maxNum;
+  for(let i=maxNum; i<=a*b; i++){
+    if(i%a===0 && i%b===0){
+        return i;
     }
-    ++maxNum;
   }
 };
-console.log(LCM(6, 4));
+console.log(LCM(3, 7));
