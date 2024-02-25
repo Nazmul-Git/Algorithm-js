@@ -31,17 +31,30 @@
 // } 
 
 
-let cross='';
-let n=4;
+//////////////// Cross X pattern  /////////////////
+// let cross='';
+// let n=5;
+// for(let i=1; i<=n; i++){
+//     for(let j=1; j<=n; j++){
+//         if(i==j || i+j===n+1){
+//             cross+='*';
+//         }
+//         else{
+//             cross+=' ';
+//         }
+//     }
+//     console.log(cross);
+//     cross='';
+// }
+
+
+//////////////// Triangle  /////////////
+let triangle='';
+let n=5;
 for(let i=1; i<=n; i++){
-    for(let j=1; j<=n; j++){
-        if(i==j || i+j===n+1){
-            cross+='*';
-        }
-        else{
-            cross+=' ';
-        }
+    for(let j=1; j<=i; j++){
+        triangle+='*';
     }
-    console.log(cross);
-    cross='';
+    console.log(triangle);
+    triangle='';
 }
