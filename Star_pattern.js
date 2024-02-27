@@ -72,15 +72,46 @@
 
 
 ///////////// rotate ////////////////
+// let triangle='';
+// let n=5;
+// for(let i=n; i>=1; i--){
+//     for(let s=1; s<i; s++){
+//         triangle+=' ';
+//     }
+//     for(let j=1; j<=n-i+1; j++){
+//         triangle+='*'
+//     }
+//     console.log(triangle);
+//     triangle='';
+// }
+
+
+///////////////////////////
+// let triangle='';
+// let n=5;
+// for(let i=n; i>=1; i--){
+//     for(let s=1; s<i; s++){
+//         triangle+=' ';
+//     }
+//     for(let j=1; j<=n-i+1; j++){
+//         triangle+='*'
+//     }
+//     console.log(triangle);
+//     triangle='';
+// }
+
+
+/////////////////////////
 let triangle='';
 let n=5;
-for(let i=n; i>=1; i--){
+for(let i=1; i<=n; i++){
     for(let s=1; s<i; s++){
-        triangle+=' ';
+        triangle+=' '
     }
     for(let j=1; j<=n-i+1; j++){
         triangle+='*'
     }
+    
     console.log(triangle);
     triangle='';
 }
