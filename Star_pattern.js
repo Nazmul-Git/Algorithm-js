@@ -60,11 +60,26 @@
 // }
 
 ////////////////////////
+// let triangle='';
+// let n=5;
+// for(let i=n; i>=1; i--){
+//     for(let j=1; j<=i; j++){
+//         triangle+='*';
+//     }
+//     console.log(triangle);
+//     triangle='';
+// }
+
+
+///////////// rotate ////////////////
 let triangle='';
 let n=5;
 for(let i=n; i>=1; i--){
-    for(let j=1; j<=i; j++){
-        triangle+='*';
+    for(let s=1; s<i; s++){
+        triangle+=' ';
+    }
+    for(let j=1; j<=n-i+1; j++){
+        triangle+='*'
     }
     console.log(triangle);
     triangle='';
