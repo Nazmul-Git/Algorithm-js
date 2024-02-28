@@ -128,4 +128,16 @@ for (let i = n; i >= 1; i--) {
   console.log(diamond);
   diamond = "";
 }
-
+for(let i=2; i<=n; i++){
+    for(let s=1; s<i; s++){
+        diamond+=' '
+    }
+    for(let j=1; j<=n-i+1; j++){
+        diamond+='*'
+    }
+    for (let k = 2; k <= n - i + 1; k++) {
+        diamond += "*";
+      }
+    console.log(diamond);
+    diamond='';
+}
