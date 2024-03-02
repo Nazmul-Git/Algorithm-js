@@ -169,7 +169,7 @@ for(let i=1; i<=n-1; i++){
     for(let s=1; s<=n-i; s++){
         diamond+='$'
     }
-    for(let s=1; s<n-i; s++){
+    for(let s=1; s<=n-i-1; s++){
         diamond+='@'
     }
     console.log(diamond);

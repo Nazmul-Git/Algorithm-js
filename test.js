@@ -18,11 +18,38 @@
 // };
 // console.log(validPalindrome('abb a'));
 
-const riven= function(){
-    let name= 'riven';
-    return ()=>{
-        return name;
-    }
-}
-let res=riven();
-console.log(res());
+// const riven= function(){
+//     let name= 'riven';
+//     return ()=>{
+//         return name;
+//     }
+// }
+// let res=riven();
+// console.log(res());
+
+///////////////////////////////////////
+
+
+// console.log('x')
+// setTimeout(()=>{
+//     console.log('y')
+// },0)
+// console.log('z')
+
+
+
+// class Xyz{
+//     static min=60;
+// }
+// let con= new Xyz
+// const x={type: 'pie'};
+// desert.type='sun';
+// const s=desert;
+// s.ty
+
+// var x;
+// let d=(str=' no arg')=>{
+//     console.log(str)
+// }
+// d(x)
+// d(null)
