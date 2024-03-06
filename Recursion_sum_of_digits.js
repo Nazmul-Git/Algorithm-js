@@ -16,3 +16,11 @@ const traverse=(arr, i)=>{
     return arr;
 }
 console.log(traverse([5,10,15,20,25,30], 0))
+
+
+// sum of array numbers
+const sum=(arr,i)=>{
+    if(i===arr.length-1) return arr[i];
+    return arr[i] + sum(arr,i+1);
+}
+console.log(sum([5,10,15,20,25,30], 0))
