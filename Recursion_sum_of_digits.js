@@ -8,7 +8,7 @@ const sumOfDigits=(n)=>{
 
 
 // traverse an array / function  er loop
-
+// indexing way
 const traverse=(arr, i)=>{
     if(i===arr.length) return;
     console.log(arr[i]);
@@ -24,3 +24,17 @@ const sum=(arr,i)=>{
     return arr[i] + sum(arr,i+1);
 }
 console.log(sum([5,10,15,20,25,30], 0))
+
+
+
+// array reverse
+const reverseArr=(arr,start,end)=>{
+    if(start>end) return;
+    let temp=arr[start];
+    arr[start]=arr[end];
+    arr[end]=temp;
+    reverseArr(arr, start+1, end-1);
+    return arr;
+};
+let arr=[10,20,30,40,50,60,70,80,90,100];
+console.log(reverseArr(arr,0,arr.length-1))
