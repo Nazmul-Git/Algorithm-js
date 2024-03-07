@@ -54,18 +54,18 @@
 
 
 // Fibonacci
-const fibonacci=(array,i)=>{
-    if(i===10) return array;
+const fibonacci=(array,i,limit)=>{
+    if(i===limit) return array;
     array.push(array[i-1]+array[i-2]);
     return fibonacci(array,i+1);
 
 };
 let array=[0,1];
-console.log(fibonacci(array,2));
+console.log(fibonacci(array,2,10));
 
-// Fibonacci
+// Find value by index from fibonacci seriese by using recursion
 var fib = function(n) {
     if(n<=1) return n;
     return fib(n-1)+fib(n-2);
 };
-console.log(fib(5))
+console.log(fib(5));
