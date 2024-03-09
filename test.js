@@ -55,17 +55,21 @@
 // d(null)
 
 
-var mergeTwoLists = function(list1, list2) {
-    let newArr=[...list1, ...list2];
-    for(let i=0; i<newArr.length; i++){
-        for(let j=i+1; j<newArr.length; j++){
-            if(newArr[i]>newArr[j]){
-                let temp=newArr[i];
-                newArr[i]=newArr[j];
-                newArr[j]=temp;
-            }
-        }
-    }
-    return newArr;
-};
-console.log(mergeTwoLists([],[]))
+// var mergeTwoLists = function(list1, list2) {
+//     let newArr=[...list1, ...list2];
+//     for(let i=0; i<newArr.length; i++){
+//         for(let j=i+1; j<newArr.length; j++){
+//             if(newArr[i]>newArr[j]){
+//                 let temp=newArr[i];
+//                 newArr[i]=newArr[j];
+//                 newArr[j]=temp;
+//             }
+//         }
+//     }
+//     return newArr;
+// };
+// console.log(mergeTwoLists([],[]))
+
+//////////////////////////////////////////////////////////////////
+
+

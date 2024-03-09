@@ -1,10 +1,21 @@
 // Sum of Digits
-// const sumOfDigits=(n)=>{
+const sumOfDigits=(n)=>{
+    if(n<10) return n;
+    let newDigit=Math.floor(n/10);
+    return (n%10)+ sumOfDigits(newDigit);
+}
+console.log(sumOfDigits(1279));
+
+// const reverseDigits=(n)=>{
 //     if(n<10) return n;
-//     let newDigit=Math.floor(n/10);
-//     return (n%10)+ sumOfDigits(newDigit);
+//     let arr=[];
+//     let newDigit=Math.floor(n/10); //12
+//     let reminder=(n%10);
+//     arr.push(reminder);
+//     return reverseDigits(newDigit);
+    
 // }
-// console.log(sumOfDigits(1279));
+// console.log(reverseDigits(123));
 
 
 // traverse an array / function  er loop
@@ -54,18 +65,18 @@
 
 
 // Fibonacci
-const fibonacci=(array,i,limit)=>{
-    if(i===limit) return array;
+const fibonacci=(array,i)=>{
+    if(i===10) return array;
     array.push(array[i-1]+array[i-2]);
     return fibonacci(array,i+1);
 
 };
 let array=[0,1];
-console.log(fibonacci(array,2,10));
+console.log(fibonacci(array,2));
 
-// Find value by index from fibonacci seriese by using recursion
-var fib = function(n) {
-    if(n<=1) return n;
-    return fib(n-1)+fib(n-2);
-};
-console.log(fib(5));
+// Find value by index from fibonacci by using recursion
+// var fib = function(n) {
+//     if(n<=1) return n;
+//     return fib(n-1)+fib(n-2);
+// };
+// console.log(fib(5));
