@@ -7,6 +7,15 @@ const margeTwoArr=(arr,l,mid,r)=>{
     let leftArr= new Array(sizeL);
     let rightArr= new Array(sizeR);
 
+    for(let i=0; i<sizeL; i++){
+        leftArr[i]=arr[l+i];
+    }
+    for(let j=0; j<sizeR; j++){
+        rightArr[j]=arr[mid+1+j];
+    }
+
+    
+
     
 }
 
