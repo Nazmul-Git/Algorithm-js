@@ -26,7 +26,18 @@ const margeTwoArr=(arr,l,mid,r)=>{
         k++;
     }
 
-    
+    while(i<sizeL){
+        arr[k]=leftArr[i];
+        i++;
+        k++;
+    }
+    while(j<sizeR){
+        arr[k]=rightArr[j];
+        j++;
+        k++
+    }
+
+
 
 
 
