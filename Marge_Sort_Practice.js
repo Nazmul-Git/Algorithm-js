@@ -1,5 +1,15 @@
 
 
+const margeTwoArr=(arr,l,mid,r)=>{
+    let sizeL=m-l+1;
+    let sizeR=r-m;
+
+    let leftArr= new Array(sizeL);
+    let rightArr= new Array(sizeR);
+
+    
+}
+
 const margeSort=(arr,l,r)=>{
     if(l>=r) return;
     let mid=Math.floor((l+r)/2);
