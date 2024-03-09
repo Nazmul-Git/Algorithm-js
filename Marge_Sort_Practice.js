@@ -1,8 +1,8 @@
 
 
 const margeTwoArr=(arr,l,mid,r)=>{
-    let sizeL=m-l+1;
-    let sizeR=r-m;
+    let sizeL=mid-l+1;
+    let sizeR=r-mid;
 
     let leftArr= new Array(sizeL);
     let rightArr= new Array(sizeR);
@@ -14,7 +14,7 @@ const margeTwoArr=(arr,l,mid,r)=>{
         rightArr[j]=arr[mid+1+j];
     }
 
-    let i=0,j=0,k=1;
+    let i=0,j=0,k=l;
     while(i<sizeL && j<sizeR){
         if(leftArr[i]<=rightArr[j]){
             arr[k]=leftArr[i];
@@ -36,11 +36,6 @@ const margeTwoArr=(arr,l,mid,r)=>{
         j++;
         k++
     }
-
-
-
-
-
     
 }
 
@@ -51,5 +46,6 @@ const margeSort=(arr,l,r)=>{
     margeSort(arr,mid+1,r);
     margeTwoArr(arr,l,mid,r);
 }
-const arr=[30,19,1,5,3,10,15];
+let arr=[30,19,1,5,3,10,15];
 margeSort(arr,l=0,r=arr.length-1);
+console.log(arr);
