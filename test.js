@@ -73,3 +73,12 @@
 //////////////////////////////////////////////////////////////////
 
 
+var lang='Bangla';
+const obj={
+    lang:'eng'
+};
+function hello(){
+    console.log(this.lang);
+}
+hello();
+hello.call(obj);

@@ -10,7 +10,7 @@ while(1){
         for (m=s; m <= 60; m++) {
           // console.log(m);
           if(m===60){
-            for (h; h <= 24; h++) {
+            for (h; h <= 1; h++) {
               timeString = (h < 10 ? "0" + h : h) + ":" + 
                            (m < 10 ? "0" + m : m) + ":" + 
                            (s < 10 ? "0" + s : s);

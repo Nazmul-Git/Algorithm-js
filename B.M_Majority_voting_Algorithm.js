@@ -15,7 +15,7 @@ const MajorityVoting = (arr) => {
     }
   }
 
-  // console.log(count, candidate);
+  // console.log(count, candidate)
 
   count = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -29,4 +29,4 @@ const MajorityVoting = (arr) => {
   return -1;
   // return count>Math.floor(arr.length/2);
 };
-console.log(MajorityVoting([4,4,3,7,2,4,4]));
+console.log(MajorityVoting([4,2,2,4,4]));

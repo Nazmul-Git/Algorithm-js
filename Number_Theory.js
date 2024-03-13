@@ -1,8 +1,8 @@
 // isPrime
 ///////////// O(n) /////////////
-// const isPrime=(n)=>{
+// const isPrime1=(n)=>{
 //     let count=0;
-//     for(let i=1;i<n; i++){
+//     for(let i=1;i<n/2; i++){
 //         if(n%2===0){
 //             count++
 //         }
@@ -10,8 +10,8 @@
 //     if(count >=2 ) return false;
 //     else return true;
 // };
-// console.log(isPrime(11))
-// console.log(isPrime(100))
+// console.log(isPrime1(11))
+// console.log(isPrime1(100))
 
 ////////////// O(n) ////////////////
 // const isPrime=(n)=>{
@@ -38,32 +38,33 @@
 
 
 //////////////////////  O(sqrt(n))  /////////////////////
-const isPrime=(n)=>{
-    let count=0;
-    for(let i=1;i< Math.sqrt(n); i++){
-        if(n%2===0){
-            count++
-        }
-    }
-    if(count > 1 ) return false;
-    else return true;
-};
-console.log(isPrime(11))
-console.log(isPrime(100))
-console.log(isPrime(2))
+// const isPrime=(n)=>{
+//     let count=0;
+//     for(let i=1;i< Math.sqrt(n); i++){
+//         if(n%2===0){
+//             count++
+//         }
+//     }
+//     if(count > 1 ) return false;
+//     else return true;
+// };
+// console.log(isPrime(11))
+// console.log(isPrime(100))
+// console.log(isPrime(2))
 //  loop will be  execute 10 times cz, squire root of 100 is 10
+// console.log(Math.sqrt(11))//3
 
 
 
 //////////////////////////// Prime Factorization //////////////////
-const primeFactorization=(num)=>{
-    let arr=[];
-    for(let i=2; i<=num; i++){
-        while(num%i===0){
-            arr.push(i);
-            num=num/i;
-        }
-    }
-    return arr;
-}
-console.log(primeFactorization(18));
+// const primeFactorization=(num)=>{
+//     let arr=[];
+//     for(let i=2; i<=num; i++){
+//         while(num%i===0){
+//             arr.push(i);
+//             num=num/i;
+//         }
+//     }
+//     return arr;
+// }
+// console.log(primeFactorization(18));
