@@ -1,7 +1,7 @@
 
 const partition=(arr,l,r)=>{
     let pivot=arr[r];
-    
+    let i=l-1;    
 }
 
 
