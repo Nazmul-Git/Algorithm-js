@@ -2,12 +2,16 @@
 const partition=(arr,l,r)=>{
     let pivot=arr[r];
     let i=l-1;    
-    for(let j=0;j<r;j++){
+    for(let j=l;j<r;j++){
         if(arr[j]<=pivot){
             i++;
+            // console.log(i)
             [arr[i],arr[j]]=[arr[j],arr[i]];
         }
     }
+    // After swap in loop arr is = [ 10, 30, 80, 90, 40 ]
+    [arr[i+1],arr[r]]=[arr[r],arr[i+1]];
+    return i+1;
 }
 
 
