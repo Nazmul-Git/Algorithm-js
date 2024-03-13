@@ -2,6 +2,12 @@
 const partition=(arr,l,r)=>{
     let pivot=arr[r];
     let i=l-1;    
+    for(let j=0;j<r;j++){
+        if(arr[j]<=pivot){
+            i++;
+            [arr[i],arr[j]]=[arr[j],arr[i]];
+        }
+    }
 }
 
 
