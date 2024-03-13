@@ -1,5 +1,6 @@
 
 const partition=(arr,l,r)=>{
+    let pivot=arr[r];
     
 }
 
