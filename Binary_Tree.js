@@ -14,28 +14,44 @@ class BinaryTree{
     }
 
     insert(value){
-        let root=this.root;
-        while(true){
-            if(value > root.value){
+        let currNode=this.root;
+        while(currNode){
+            if(value > currNode.value){
                 //right 
-                if(root.right===null){
-                    root.right= new Node(value);
+                if(currNode.right===null){
+                    currNode.right= new Node(value);
                     break;
                 }
-                root=root.right;
+                currNode=currNode.right;
             }else{
                 // left
-                if(root.left===null){
-                    root.left= new Node(value);
+                if(currNode.left===null){
+                    currNode.left= new Node(value);
                     break;
                 }
-                root=root.left;
+                currNode=currNode.left;
             }
         }
+    }
+    
+    search(target){
+        let currNode= this.root;
+        while(currNode){
+            if(currNode.value===target) return 'Data Found';
+            if(target > currNode.value) currNode=currNode.right;
+            else currNode=currNode.left;
+        }
+        return 'Data Not Found'
     }
 }
 
 let tree= new BinaryTree(10);
 tree.insert(20);
 tree.insert(5);
-console.log(tree);
+tree.insert(7);
+tree.insert(15);
+tree.insert(12);
+// console.log(tree);
+console.log(tree.search(15));
+console.log(tree.search(19));
+console.log(JSON.stringify(tree));
