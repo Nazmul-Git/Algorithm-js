@@ -11,7 +11,22 @@ class BinaryTree {
     this.root = new Node(value);
   }
 
-  
+  insert(value) {
+    let currNode = this.root;
+    while (currNode) {
+      if (value > currNode) {
+        if (currNode.right === null) {
+          currNode.right = new Node(value);
+          break;
+        }
+        currNode=currNode.right
+      } else {
+        currNode.left = new Node(value);
+        break;
+      }
+      currNode=currNode.left;
+    }
+  }
 }
 
 let bst= new BinaryTree(50);
