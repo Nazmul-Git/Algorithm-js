@@ -55,18 +55,26 @@ class BinaryTree{
             queue.shift();
         }
     }
+
+    DFS_inOrderTraversal(node){
+        // console.log(node);
+        if(node.left) this.DFS_inOrderTraversal(node.left);
+        console.log(node.value)
+        if(node.right) this.DFS_inOrderTraversal(node.right);
+    }
 }
 
-let tree= new BinaryTree(10);
+let tree= new BinaryTree(50);
+tree.insert(30);
+tree.insert(70);
 tree.insert(20);
-tree.insert(5);
-tree.insert(7);
-tree.insert(15);
-tree.insert(12);
-tree.insert(10);
-// console.log(tree);
-console.log(tree.search(15));
-console.log(tree.search(19));
-console.log(JSON.stringify(tree));
+tree.insert(40);
+tree.insert(80);
 
-tree.BFS_traverseOnTree();
+// console.log(tree);
+// console.log(tree.search(15));
+// console.log(tree.search(19));
+// console.log(JSON.stringify(tree));
+
+// tree.BFS_traverseOnTree();
+tree.DFS_inOrderTraversal(tree.root);
