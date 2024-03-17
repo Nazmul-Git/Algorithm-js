@@ -60,6 +60,7 @@ class BinaryTree {
       }
       if(currNode.value===target){
         currNode=currNode.left;
+        this.targetNode=currNode.left;
         // console.log(currNode);
       }
       currNode=currNode.right;
@@ -76,6 +77,7 @@ class BinaryTree {
       }
       if(currNode.value===target){
         currNode=currNode.right;
+        this.targetNode=currNode.right;
         // console.log(currNode);
       }
       currNode=currNode.left;
@@ -83,8 +85,13 @@ class BinaryTree {
     return currNode.value;
   }
 
-  // delete(node){
-  //   if()
+  // delete(target){
+  //   let currNode=this.root;
+  //   if(target<currNode.value){
+  //     let predecessor=this.predecessor(target);
+  //     console.log(predecessor,this.targetNode)
+  //     // this.targetNode.value=predecessor;
+  //   }
   // }
 }
 
@@ -107,7 +114,7 @@ bst.insert(39);
 // console.log(bst.minimum()); //30
 // console.log(bst.maximum()); //80
 
-console.log(bst.predecessor(50));
-console.log(bst.successor(60));
+// console.log(bst.predecessor(50));
+// console.log(bst.successor(60));
 // bst.delete(40);
 console.log(JSON.stringify(bst));
