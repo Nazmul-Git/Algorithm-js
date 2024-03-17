@@ -67,6 +67,22 @@ class BinaryTree {
     return currNode.value;
   }
 
+  successor(target){
+    let currNode=this.root;
+    while(currNode){
+      if(currNode.left===null) break;
+      if(target>currNode.value){
+        currNode=currNode.right;
+      }
+      if(currNode.value===target){
+        currNode=currNode.right;
+        // console.log(currNode);
+      }
+      currNode=currNode.left;
+    }
+    return currNode.value;
+  }
+
   // delete(node){
   //   if()
   // }
@@ -92,5 +108,6 @@ bst.insert(39);
 // console.log(bst.maximum()); //80
 
 console.log(bst.predecessor(50));
+console.log(bst.successor(60));
 // bst.delete(40);
 console.log(JSON.stringify(bst));
