@@ -30,14 +30,19 @@ class BinaryTree {
     }
   }
 
-  inOrder(node, list){
+  DFS_InOrder(node, list){
     // console.log(node)
-    if(node.left) this.inOrder(node.left,list);
+    if(node.left) this.DFS_InOrder(node.left,list);
     list.push(node.value);
-    if(node.right) this.inOrder(node.right,list);
+    if(node.right) this.DFS_InOrder(node.right,list);
     return list;
   }
   
+  minimum(){
+    let queue=this.DFS_InOrder(this.root, []);
+    console.log(queue);
+    return queue[0];
+  }
 }
 
 let bst = new BinaryTree(50);
@@ -47,6 +52,6 @@ bst.insert(70);
 bst.insert(80);
 
 
-console.log(bst.inOrder(bst.root,[]));
-// bst.minimum();
+// console.log(bst.DFS_InOrder(bst.root,[]));
+console.log(bst.minimum()); //30
 // console.log(JSON.stringify(bst));
