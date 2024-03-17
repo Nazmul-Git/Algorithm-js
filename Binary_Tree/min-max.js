@@ -19,15 +19,21 @@ class BinaryTree {
           currNode.right = new Node(value);
           break;
         }
-        currNode=currNode.right
+        currNode = currNode.right;
       } else {
+        if(currNode.left===null){
         currNode.left = new Node(value);
         break;
+        }
       }
-      currNode=currNode.left;
+      currNode = currNode.left;
     }
   }
 }
 
-let bst= new BinaryTree(50);
-console.log(bst);
+let bst = new BinaryTree(50);
+bst.insert(30);
+bst.insert(40);
+bst.insert(70);
+bst.insert(80);
+console.log(JSON.stringify(bst));
