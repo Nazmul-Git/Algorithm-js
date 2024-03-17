@@ -46,7 +46,7 @@ class BinaryTree{
 
     BFS_traverseOnTree(){
         let currNode=this.root;
-        let queue=[currNode];
+        let queue=[currNode];  //use queue data structure FIFO
         while(queue.length){
             currNode=queue[0];
             if(currNode.left) queue.push(currNode.left);
@@ -56,25 +56,28 @@ class BinaryTree{
         }
     }
 
-    DFS_inOrderTraversal(node){
+    DFS_inOrderTraversal(node, list){
         // console.log(node);
-        if(node.left) this.DFS_inOrderTraversal(node.left);
-        console.log(node.value)
-        if(node.right) this.DFS_inOrderTraversal(node.right);
+        if(node.left) this.DFS_inOrderTraversal(node.left, list);
+        list.push(node.value);
+        if(node.right) this.DFS_inOrderTraversal(node.right, list);
+        return list;
     }
 
-    DFS_preOrderTraversal(node){
+    DFS_preOrderTraversal(node, list){
         // console.log(node);
-        console.log(node.value);
-        if(node.left) this.DFS_preOrderTraversal(node.left);
-        if(node.right) this.DFS_preOrderTraversal(node.right);
+        list.push(node.value);
+        if(node.left) this.DFS_preOrderTraversal(node.left, list);
+        if(node.right) this.DFS_preOrderTraversal(node.right, list);
+        return list;
     }
 
-    DFS_postOrderTraversal(node){
+    DFS_postOrderTraversal(node,list){
         // console.log(node);
-        if(node.left) this.DFS_postOrderTraversal(node.left);
-        if(node.right) this.DFS_postOrderTraversal(node.right);
-        console.log(node.value);
+        if(node.left) this.DFS_postOrderTraversal(node.left, list);
+        if(node.right) this.DFS_postOrderTraversal(node.right, list);
+        list.push(node.value);
+        return list;
     }
 }
 
@@ -91,6 +94,9 @@ tree.insert(80);
 // console.log(JSON.stringify(tree));
 
 // tree.BFS_traverseOnTree();
-// tree.DFS_inOrderTraversal(tree.root);
-// tree.DFS_preOrderTraversal(tree.root);
-tree.DFS_postOrderTraversal(tree.root);
+let DFSin=tree.DFS_inOrderTraversal(tree.root, []);
+console.log(DFSin); //[ 20, 30, 40, 50, 70, 80 ]
+let DFSpre=tree.DFS_preOrderTraversal(tree.root, []);
+console.log(DFSpre); //[ 50, 30, 20, 40, 70, 80 ]
+let DFSpost=tree.DFS_postOrderTraversal(tree.root, []);
+console.log(DFSpost); //[ 20, 40, 30, 80, 70, 50 ]
