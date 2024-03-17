@@ -69,6 +69,13 @@ class BinaryTree{
         if(node.left) this.DFS_preOrderTraversal(node.left);
         if(node.right) this.DFS_preOrderTraversal(node.right);
     }
+
+    DFS_postOrderTraversal(node){
+        // console.log(node);
+        if(node.left) this.DFS_postOrderTraversal(node.left);
+        if(node.right) this.DFS_postOrderTraversal(node.right);
+        console.log(node.value);
+    }
 }
 
 let tree= new BinaryTree(50);
@@ -85,4 +92,5 @@ tree.insert(80);
 
 // tree.BFS_traverseOnTree();
 // tree.DFS_inOrderTraversal(tree.root);
-tree.DFS_preOrderTraversal(tree.root);
+// tree.DFS_preOrderTraversal(tree.root);
+tree.DFS_postOrderTraversal(tree.root);
