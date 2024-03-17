@@ -25,8 +25,8 @@ class BinaryTree {
         currNode.left = new Node(value);
         break;
         }
+        currNode = currNode.left;
       }
-      currNode = currNode.left;
     }
   }
 
@@ -43,6 +43,12 @@ class BinaryTree {
     console.log(queue);
     return queue[0];
   }
+
+  maximum(){
+    let queue=this.DFS_InOrder(this.root, []);
+    console.log(queue);
+    return queue[queue.length-1];
+  }
 }
 
 let bst = new BinaryTree(50);
@@ -54,4 +60,5 @@ bst.insert(80);
 
 // console.log(bst.DFS_InOrder(bst.root,[]));
 console.log(bst.minimum()); //30
+console.log(bst.maximum()); //30
 // console.log(JSON.stringify(bst));
