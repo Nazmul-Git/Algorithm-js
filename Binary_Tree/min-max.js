@@ -14,13 +14,13 @@ class BinaryTree {
   insert(value) {
     let currNode = this.root;
     while (currNode) {
-      if (value > currNode.value) {
+      if (value > currNode.value) { //right
         if (currNode.right === null) {
           currNode.right = new Node(value);
           break;
         }
         currNode = currNode.right;
-      } else {
+      } else {  //left
         if(currNode.left===null){
         currNode.left = new Node(value);
         break;
@@ -30,6 +30,7 @@ class BinaryTree {
     }
   }
 
+//   Traverse
   DFS_InOrder(node, list){
     // console.log(node)
     if(node.left) this.DFS_InOrder(node.left,list);
@@ -49,16 +50,47 @@ class BinaryTree {
     console.log(queue);
     return queue[queue.length-1];
   }
+
+  predecessor(target){
+    let currNode=this.root;
+    while(currNode){
+      if(currNode.right===null) break;
+      if(target<currNode.value){
+        currNode=currNode.left;
+      }
+      if(currNode.value===target){
+        currNode=currNode.left;
+        // console.log(currNode);
+      }
+      currNode=currNode.right;
+    }
+    return currNode.value;
+  }
+
+  // delete(node){
+  //   if()
+  // }
 }
 
 let bst = new BinaryTree(50);
-bst.insert(30);
 bst.insert(40);
+bst.insert(60);
+bst.insert(35);
+bst.insert(45);
+bst.insert(52);
 bst.insert(70);
+bst.insert(38);
+bst.insert(62);
 bst.insert(80);
+bst.insert(61);
+bst.insert(65);
+bst.insert(39);
 
 
 // console.log(bst.DFS_InOrder(bst.root,[]));
-console.log(bst.minimum()); //30
-console.log(bst.maximum()); //30
-// console.log(JSON.stringify(bst));
+// console.log(bst.minimum()); //30
+// console.log(bst.maximum()); //80
+
+console.log(bst.predecessor(50));
+// bst.delete(40);
+console.log(JSON.stringify(bst));
