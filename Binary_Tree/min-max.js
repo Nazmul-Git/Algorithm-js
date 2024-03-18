@@ -85,6 +85,16 @@ class BinaryTree {
     return currNode.value;
   }
 
+  floor(value){
+    let queue= this.DFS_InOrder(this.root, []);
+    for(let i=0; i<queue.length; i++){
+      if(queue[i]===value) return queue[i-1];
+    }
+  }
+
+
+
+
   // delete(target){
   //   let currNode=this.root;
   //   if(target<currNode.value){
@@ -117,4 +127,7 @@ bst.insert(39);
 // console.log(bst.predecessor(50));
 // console.log(bst.successor(60));
 // bst.delete(40);
-console.log(JSON.stringify(bst));
+// console.log(JSON.stringify(bst));
+
+
+console.log(bst.floor(39));
