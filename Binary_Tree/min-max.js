@@ -92,6 +92,13 @@ class BinaryTree {
     }
   }
 
+  ceil(value){
+    let queue= this.DFS_InOrder(this.root, []);
+    for(let i=0; i<queue.length; i++){
+      if(queue[i]===value) return queue[i+1];
+    }
+  }
+
 
 
 
@@ -131,3 +138,4 @@ bst.insert(39);
 
 
 console.log(bst.floor(39));
+console.log(bst.ceil(39));
