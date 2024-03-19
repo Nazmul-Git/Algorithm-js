@@ -137,5 +137,5 @@ bst.insert(39);
 // console.log(JSON.stringify(bst));
 
 
-console.log(bst.floor(39));
-console.log(bst.ceil(39));
+console.log(bst.floor(40));
+console.log(bst.ceil(40));
