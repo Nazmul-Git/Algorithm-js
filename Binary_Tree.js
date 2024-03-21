@@ -93,7 +93,7 @@ tree.insert(80);
 // console.log(tree.search(19));
 // console.log(JSON.stringify(tree));
 
-// tree.BFS_traverseOnTree();
+tree.BFS_traverseOnTree();
 let DFSin=tree.DFS_inOrderTraversal(tree.root, []);
 console.log(DFSin); //[ 20, 30, 40, 50, 70, 80 ]
 let DFSpre=tree.DFS_preOrderTraversal(tree.root, []);
